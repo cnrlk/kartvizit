@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NewProject</string>
+    <string name="login_email_hint">Enter e-mail address</string>
+    <string name="login_password_hint">Enter password</string>
+    <string name="login_button">Login</string>
+    <string name="login_sign_in">Sign in</string>
+    <string name="scan_new_card">Scan new Card</string>
+    <string name="total_cards">Total Cards</string>
+</resources>

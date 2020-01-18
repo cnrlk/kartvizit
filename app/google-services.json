@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "485463065911",
+    "firebase_url": "https://newproject-6e11d.firebaseio.com",
+    "project_id": "newproject-6e11d",
+    "storage_bucket": "newproject-6e11d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485463065911:android:23c4e25ee573b490da46b2",
+        "android_client_info": {
+          "package_name": "com.caner.newproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485463065911-1jvpaco9de1jt8c9neg5tfkovk4pvpc2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCshS_nkRKgig9hbYJc1EH6HgFWe9zNEIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485463065911-1jvpaco9de1jt8c9neg5tfkovk4pvpc2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
