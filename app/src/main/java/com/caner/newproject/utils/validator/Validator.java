@@ -1,11 +1,13 @@
 package com.caner.newproject.utils.validator;
 
+import android.text.Editable;
 import android.widget.EditText;
 
 import com.caner.newproject.utils.validator.listener.ValidationListener;
 import com.caner.newproject.utils.validator.results.EmailValidationResult;
 import com.caner.newproject.utils.validator.results.EmptyValidationResult;
 import com.caner.newproject.utils.validator.results.OKValidationResult;
+import com.caner.newproject.utils.validator.results.PasswordValidationResult;
 import com.caner.newproject.utils.validator.type.ValidationType;
 
 import java.util.ArrayList;
@@ -72,6 +74,31 @@ public class Validator {
                 }
                 case ValidationType.EMAIL_VALIDATION: {
                     if (!editText.getText().toString().matches("^[0-9?A-z0-9?]+(\\.)?[0-9?A-z0-9?]+@[A-z]+\\.[A-z]{3}.?[A-z]{0,3}$")) return new EmailValidationResult();
+                    break;
+                }
+                case ValidationType.PASSWORD_VALIDATION: {
+                    if (editText.getText().toString().matches("^(?!.*?[ '.-]{2})[A-Za-z0-9 '.-]{1,30}$")) return new PasswordValidationResult();
+                    break;
+                }
+            }
+        }
+
+        return new OKValidationResult();
+    }
+
+    ValidationResult validate(Editable editable) {
+        for (String type : types) {
+            switch (type) {
+                case ValidationType.EMPTY_VALIDATION: {
+                    if (editable.toString().isEmpty()) return new EmptyValidationResult();
+                    break;
+                }
+                case ValidationType.EMAIL_VALIDATION: {
+                    if (!editable.toString().matches("^[0-9?A-z0-9?]+(\\.)?[0-9?A-z0-9?]+@[A-z]+\\.[A-z]{3}.?[A-z]{0,3}$")) return new EmailValidationResult();
+                    break;
+                }
+                case ValidationType.PASSWORD_VALIDATION: {
+                    if (!editable.toString().matches("^(?!.*?[ '.-]{2})[A-Za-z0-9 '.-]{6,10}$")) return new PasswordValidationResult();
                     break;
                 }
             }

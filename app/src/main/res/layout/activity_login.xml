@@ -40,7 +40,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                caneru:validation="@{ValidationGenerator.generate(ValidationType.EMPTY_VALIDATION, ValidationType.EMAIL_VALIDATION)}"/>
+                caneru:formatter="@{@string/pattern}"/>
 
             <EditText
                 android:id="@+id/editText2"
@@ -55,7 +55,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/editText"
-                caneru:validation="@{ValidationType.EMPTY_VALIDATION}"/>
+                caneru:validationWatcher="@{ValidationType.EMPTY_VALIDATION}"/>
 
             <Button
                 android:id="@+id/button"

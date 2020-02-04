@@ -1,5 +1,6 @@
 package com.caner.newproject.utils.validator;
 
+import android.text.Editable;
 import android.widget.EditText;
 
 import com.caner.newproject.utils.validator.listener.ValidationListener;
@@ -37,6 +38,11 @@ public class ValidationBinding {
                 return new EmptyValidationResult();
             }
         });
+    }
+
+    @BindingAdapter("caneru:validationWatcher")
+    public static void setValidationWatcher(EditText editText, String value) {
+        editText.addTextChangedListener(new ValidationWatcher(value, editText));
     }
 
     @BindingAdapter("caneru:validation")

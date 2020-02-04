@@ -30,8 +30,8 @@ public class LoginActivity extends Activity {
         viewModel = new LoginViewModel();
         binding.setViewModel(viewModel);
 
-        binding.editText.setText("canerulku4@gmail.com");
-        binding.editText2.setText("Aero1991");
+        //binding.editText.setText("canerulku4@gmail.com");
+        //binding.editText2.setText("Aero1991");
 
 
         binding.button.setOnClickListener(v -> {

@@ -6,4 +6,6 @@
     <string name="login_sign_in">Sign in</string>
     <string name="scan_new_card">Scan new Card</string>
     <string name="total_cards">Total Cards</string>
+
+    <string name="pattern">(***) ***-****</string>
 </resources>
