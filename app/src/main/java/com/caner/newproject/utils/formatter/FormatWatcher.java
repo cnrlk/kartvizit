@@ -20,7 +20,7 @@ class FormatWatcher implements TextWatcher {
         analizePattern();
         addFilters();
     }
-
+    
     private void analizePattern() {
         int starIndex = 0;
         positionsOnPattern = new int[pattern.length()];
@@ -68,7 +68,23 @@ class FormatWatcher implements TextWatcher {
         editText.getText().clear();
         editText.append(formattedEntry);
 
+        editText.setSelection(Math.min(charSequence.length(),getNewPosition(i)));
+
         editText.addTextChangedListener(this);
+    }
+
+    private int getNewPosition(int oldPosition) {
+        if (isDelete) {
+            while (oldPosition > 0 && positionsOnPattern[oldPosition-1] == -1) {
+                oldPosition--;
+            }
+        } else {
+            oldPosition++;
+            while ((oldPosition < pattern.length() && positionsOnPattern[oldPosition] == -1) || (oldPosition > 0 && positionsOnPattern[oldPosition-1] == -1)) {
+                oldPosition++;
+            }
+        }
+        return oldPosition;
     }
 
     private String formatText(CharSequence charSequence) {
